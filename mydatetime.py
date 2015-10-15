@@ -4,7 +4,7 @@ import numpy
 '''
 -----------------------------------------------------------------
  mydatetime v0.2  for python
-     Copyright (c) 2007 hadacchi
+     Copyright (c) 2015 hadacchi
 -----------------------------------------------------------------
 
 *** This script requires numpy, i.e. numerical python ***
