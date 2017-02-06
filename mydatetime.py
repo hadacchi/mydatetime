@@ -30,7 +30,6 @@ class mydatetime(datetime):
     __MILLIFMT='%u'
 
     def __sub__(self,t):
-
         # if return value is <type 'timedelta'>
         if t.__class__ == self.__class__ or \
            t.__class__ == self.__ZERODATE[0].__class__:
