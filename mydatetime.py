@@ -29,22 +29,17 @@ class mydatetime(datetime):
     ## expression for milliseconds
     __MILLIFMT='%u'
 
-    def __init__(self,year,month,day,hour=0,minute=0,second=0,microsecond=0,tzinfo=0):
-        '''constructor'''
-        # call parent's constructor
-        super(mydatetime,self).__init__(
-            year,month,day,hour,
-            minute,second,microsecond,tzinfo
-            )
-
     def __sub__(self,t):
+
         # if return value is <type 'timedelta'>
         if t.__class__ == self.__class__ or \
            t.__class__ == self.__ZERODATE[0].__class__:
-            return super(mydatetime,self).__sub__(self,t)
+            #return super(mydatetime,self).__sub__(self,t)
+            return super().__sub__(t)
         # else (mydatetime-timedelta) should be mydatetime
         else:
-            tmp = super(mydatetime,self).__sub__(t)
+            #tmp = super(mydatetime,self).__sub__(t)
+            tmp = super().__sub__(t)
             return self.__class__(
                 tmp.year,tmp.month,tmp.day,tmp.hour,
                 tmp.minute,tmp.second,tmp.microsecond,tmp.tzinfo
@@ -54,10 +49,11 @@ class mydatetime(datetime):
         # if return value is <type 'timedelta'>
         if t.__class__ == self.__class__ or \
            t.__class__ == self.__ZERODATE[0].__class__:
-            return datetime.__add__(self,t)
+            return datetime.__add__(t)
         # else (mydatetime-timedelta) should be mydatetime
         else:
-            tmp = super(mydatetime,self).__add__(self,t)
+            #tmp = super(mydatetime,self).__add__(self,t)
+            tmp = super().__add__(t)
             return self.__class__(
                 tmp.year,tmp.month,tmp.day,tmp.hour,
                 tmp.minute,tmp.second,tmp.microsecond,tmp.tzinfo
